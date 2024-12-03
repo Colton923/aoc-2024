@@ -9,10 +9,29 @@ trait Solver {
 }
 
 mod day_1;
+
 impl Solver for day_1::Day1 {
     fn solve(&self, input: &str) {
         day_1::solve_day_part_1(input);
         day_1::solve_day_part_2(input);
+    }
+}
+
+mod day_2;
+
+impl Solver for day_2::Day2 {
+    fn solve(&self, input: &str) {
+        day_2::solve_day_part_1(input);
+        day_2::solve_day_part_2(input);
+    }
+}
+
+mod day_3;
+
+impl Solver for day_3::Day3 {
+    fn solve(&self, input: &str) {
+        day_3::solve_day_part_1(input);
+        day_3::solve_day_part_2(input);
     }
 }
 
@@ -43,6 +62,8 @@ fn main() {
     // Create a HashMap to map day input to solver
     let mut solvers: HashMap<&str, Box<dyn Solver>> = HashMap::new();
     solvers.insert("1", Box::new(day_1::Day1 {}));
+    solvers.insert("2", Box::new(day_2::Day2 {}));
+    solvers.insert("3", Box::new(day_3::Day3 {}));
 
     // Solve based on the day input
     if let Some(solver) = solvers.get(day_input) {

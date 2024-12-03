@@ -1,7 +1,8 @@
-use std::{collections::HashMap, hash::Hash, string, vec};
+use std::{collections::HashMap};
 
 use crate::utils::write_to_file;
-pub struct Day1 {}
+pub struct Day1 {
+}
 
 pub fn solve_day_part_1(content: &str) -> i32 {
     let mut items_a: Vec<i32> = Vec::new();
@@ -27,7 +28,7 @@ pub fn solve_day_part_1(content: &str) -> i32 {
     items_a.sort_by(|a, b| a.cmp(&b));
     items_b.sort_by(|a, b| a.cmp(&b));
 
-    let mut len = items_a.len();
+    let  len = items_a.len();
 
 
     for i in 0..len {
@@ -38,8 +39,6 @@ pub fn solve_day_part_1(content: &str) -> i32 {
     write_to_file(&to_file,"./src/day_1/output_part_1.txt");
     return result;
 }
-
-
 
 pub fn solve_day_part_2(content: &str) -> i32 { 
     let mut items_a: HashMap<i32, i32> = HashMap::new();
